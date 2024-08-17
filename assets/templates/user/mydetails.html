@@ -1,0 +1,88 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+body{
+
+        }
+    #customers{
+         font-family: Abel;
+    border-collapse: collapse;
+    color: black;
+    margin-top: 50px;
+    margin-left: 435px;
+    font-size: 24px;
+    text-align: center;
+    background: #dc6362;
+
+       }
+       #customers td, #customers th{
+       border:1px solid #ddd;
+       padding: 18px 37px 10px 20px;
+
+
+       }
+
+
+
+       #customers th {
+
+    text-align: ;
+
+
+}
+.imga{
+background: url("{% static 'admin.jpeg' %}");
+background-size:100% 100%;
+height:-webkit-fill-available;
+width:100%;
+position: absolute;
+}
+
+
+
+</style>
+
+
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <div class="">
+    <table id="customers">
+        <tr>
+            <td>First Name :</td>
+            <td>{{ objects.firstname }}</td>
+        </tr>
+        <tr>
+            <td>Last Name :</td>
+            <td>{{ objects.lastname }}</td>
+        </tr>
+        <tr>
+            <td>Userid :</td>
+            <td>{{ objects.userid }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ objects.password }}</td>
+        </tr>
+        <tr>
+            <td>Phoneno :</td>
+            <td>{{ objects.phoneno}}</td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td>{{ objects.email}}</td>
+        </tr>
+        <tr>
+            <td>Gender :</td>
+            <td>{{ objects.gender}}</td>
+        </tr>
+
+    </table>
+    </div>
+
+
+</form>
+
+</body>
+{% endblock %}
